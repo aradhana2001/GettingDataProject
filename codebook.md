@@ -20,68 +20,73 @@ Please see the readme.md file for more details on the format of the data and to 
 
 The basic file contains:
 
-subjectid       numeric
-                ID for the individual subject
+###subjectid      
+ * numeric
+ * ID for the individual subject
+ 
 
-activityname    character
-                Name for the activity measured. Six 
-                values: WALKING, WALKING_UPSTAIRS,
-                WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING.
+###activityname    
+ * character
+ * Name for the activity measured. 
+ * Values: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING.
 
-feature         character
-                A complex feature name, used for auditing and transformations as needed.
-                Has punctuation removed and transformed to camelcase for readability.
-                Note 1 below explains the structure of the names. Note 2 below provides 
-                a map from the original data and these names.
+###feature         
+ * character
+ * A complex feature name, used for auditing and transformations as needed.
+ * Has punctuation removed and transformed to camelcase for readability.
+ * Note 1 below explains the structure of the names. Note 2 below provides a map from the original data and these names.
 
-value            numeric
-                The mean value for the measure for this subject-activity-feature.
+###value           
+* numeric
+* The mean value for the measure for this subject-activity-feature.
 
 
-If you choose the LongNarrowPlus data you will 
+_If you choose the LongNarrowPlus data you will also get these columns, which are also used to define the feature names in the table._
 
-domain          character
-                Represents the type of measurement.
-                Values: time, frequency. angle
-                F indicates that Fast Fourier Transforms have been applied.
+###domain          
+* character
+* Represents the type of measurement.
+* Values: time, frequency. angle
+* frequency indicates that Fast Fourier Transforms have been applied.
 
-dimension       character
-                The three possible spatial dimensions: 
-                Values: x, y,z 
-                NA data is used for dimensionless measuements.
+###dimension       
+* character
+* The three possible spatial dimensions: 
+* Values: x, y,z 
+* NA data is used for dimensionless measuements.
 
-statistic       character
-                Indicates what statistic this is a mean of. 
-                Values:  mad, max, min, sma, iqr, entropy, 
-                 arCoeff, correlation, maxInds, meanFreq, skewness, kurtosis, 
-                bandsEnergy, "energy, mean, std, angle
-                Note: This dataset includes only mean and std, but the others can be
-                obtained using the statswanted object.
+###statistic       
+* character
+* Indicates what statistic this is a mean of. 
+* Values:  mad, max, min, sma, iqr, entropy, arCoeff, correlation, maxInds, meanFreq, skewness, kurtosis, bandsEnergy, "energy, mean, std, angle
+* Note: This dataset includes only mean and std, but the others can be obtained using the statswanted object.
 
-source          character
-                Source of the measure: 
-                Values: accelerator or gyroscope
+###source          
+* character
+* Source of the measure 
+* Values: accelerator or gyroscope
 
-accelerationsignal     
-                character
-                Type of signal. 
-                Values: acceleration, Ggavity
+###accelerationsignal     
+* character
+* Type of signal. 
+* Values: acceleration, gravity
 
-jerk            character
-                Indicates if this was a measure is of jerk. 
-                Values: jerk, non jerk
-                Jerk means the body linear acceleration and angular velocity 
-                were derived in time. Essentially the acceleration of acceleration.
+###jerk
+* character
+* Indicates if this was a measure is of jerk. 
+* Values: jerk, non jerk
+* Jerk means the body linear acceleration and angular velocity were derived in time. Essentially the acceleration of acceleration.
 
-magnitude       character
-                Indicates if this is based on a measure of "magnitude of the
-                three-dimensional signals. 
-                Values: mag, non mag
-                Magnitude of these three-dimensional signals
+###magnitude
+* character
+* Indicates if this is based on a measure of "magnitude of thethree-dimensional signals." 
+* Values: mag, non mag
+* Magnitude of these three-dimensional signals
 
-frequency       character
-                Indicates if this was a measure of frequency. 
-                Values: freq, non freq
+###frequency
+* character
+* Indicates if this was a measure of frequency. 
+* Values: freq, non freq
                 
                 
 ##Note 1
@@ -111,7 +116,7 @@ remove noise.
 >These signals were used to estimate variables of the feature vector for each pattern:  
 >'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-[_Note:As set of statistics were calculated for each. See statistics variables _]
+_Note:A set of statistics were calculated for each. See statistic variables_
 
 >Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
 
@@ -124,6 +129,7 @@ This presents a map of the feature names in the original data set to the feature
 Note that not all possible combinations of attributes are present in the data set.
 
 Original feature name                		New feature name
+```
 featurename        				feature
 tBodyAcc-mean()-X				timeAccelerometerBodyMeanNojerkNomagNofreqX
 tBodyAcc-mean()-Y				timeAccelerometerBodyMeanNojerkNomagNofreqY
@@ -939,3 +945,4 @@ angle(X,gravityMean)					angleGyroscopeGravityAngleNojerkNomagNofreqNA
 angle(Y,gravityMean)					angleGyroscopeGravityAngleNojerkNomagNofreqNA
 angle(Z,gravityMean)					angleGyroscopeGravityAngleNojerkNomagNofreqNA
 
+```
