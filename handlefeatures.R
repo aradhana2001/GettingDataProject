@@ -7,7 +7,12 @@ createFeatures<-function()
                              row.names=1, col.names=c("featureid","featurename"), header=FALSE)      
 
                 ## First part of cleaning up the variable names
-                ## colnames represents all of the columns in the original data set.
+                ## featirecolnames represents all of the columns in the original data set.
+                ## Fix Up some anamolies
+                arCoeffFix<-grep("[arCoeff()][^-][0-9]$", features$featurename)
+               
+                
+                
                 featurecolnames<-tolower(as.array(features$featurename))
                 
                 featurecolnames<-gsub("(","",featurecolnames, fixed=TRUE)
@@ -143,6 +148,7 @@ subsetFeatures<-function(statsWanted, expandedFeatures)
 }
 
 ## Run this function to generate a map of original and simpified feature names
+## This generates a warning but it's harmless.
 getOldNewMap<-function(write=FALSE)
 {
         featureslistall<-createFeatures()
@@ -168,6 +174,19 @@ getOldNewMap<-function(write=FALSE)
         oldNewMap<-oldNewMap[, c("featurename", "feature")]
         if (write==TRUE)
         {
-                write.table(oldNewMap, "./data/featurenamemap.txt", quote=FALSE, row.names=FALSE, sep="  |  ")
+                tableheader<-"
+This presents a map of the feature names in the original data set to the feature names in this data set.
+
+Note that not all possible combinations of attributes are present in the data set.
+
+| Original feature name          |            	New feature name                         |
+|:-------------------------------|:------------------------------------------------------|"
+                writeLines(text=tableheader, con='./featurenamemap.md')
+                write.table(oldNewMap, "./featurenamemap.md", 
+                            quote=FALSE, 
+                            row.names=FALSE, 
+                            sep="  |  ",
+                            append=TRUE
+                            )
         }
 }
