@@ -168,6 +168,6 @@ getOldNewMap<-function(write=FALSE)
         oldNewMap<-oldNewMap[, c("featurename", "feature")]
         if (write==TRUE)
         {
-                write.table(oldNewMap, "./data/featurenamemap.txt", quote=FALSE, row.names=FALSE, sep="\t\t\t\t\t")
+                write.table(oldNewMap, "./data/featurenamemap.txt", quote=FALSE, row.names=FALSE, sep="  |  ")
         }
 }
