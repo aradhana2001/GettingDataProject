@@ -2,20 +2,21 @@
 title: "Exercise Data Codebook"
 output: html_document
 ---
+# Codebook
+
+## Background
 This data is based on the xx data set by yy. More details can be found here.
 
 Original Data source :  
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones#
 Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. 
-Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support 
-Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). 
-Vitoria-Gasteiz, Spain. Dec 2012
+Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
 
-This data is presented in the long format and follows the guidelines for tidy data presented in Hadley Wickham's paper Tiday Data (Hadley WIckham, "Tidy Data" Journal of Statistical Software, http://vita.had.co.nz/papers/tidy-data.pdf
-
-).  In addition to being tidy, this gives the user maximum flexibility.  
+This data is presented in the long format and follows the guidelines for tidy data presented in Hadley Wickham's paper Tiday Data (Hadley WIckham, "Tidy Data" Journal of Statistical Software, http://vita.had.co.nz/papers/tidy-data.pdf).  In addition to being tidy, this gives the user maximum flexibility.  
 
 Please see the readme.md file for more details on the format of the data and to understand how it was created from the original data. That file also explains how to obtain the data in other formats
+
+## Variables
 
 The basic file contains:
 
@@ -83,7 +84,7 @@ frequency       character
                 Values: freq, non freq
                 
                 
-Note 1
+##Note 1
 
 This explains the meaning of the different segments within the feature names.
 
@@ -94,31 +95,28 @@ Note that not all names are unique. For the current project this was not an isue
 
 Quoted from the original study code book feature_info.txt file from the original dataset.
 
-The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) 
+>The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) 
 were captured at a constant rate of 50 Hz. Then they were filtered using a median filter 
 and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to 
 remove noise. 
 
-Similarly, the acceleration signal was then separated into body and gravity acceleration
-signals  (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with
-a corner frequency of 0.3 Hz. 
+>Similarly, the acceleration signal was then separated into body and gravity acceleration signals  (tBodyAcc-XYZ and tGravityAcc-XYZ)  using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
-Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). 
+>Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). 
 
-Also the magnitude of these three-dimensional signals were calculated 
-using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+>Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
 
-Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+> Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
 
-These signals were used to estimate variables of the feature vector for each pattern:  
-'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+>These signals were used to estimate variables of the feature vector for each pattern:  
+>'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-[Note:As set of statistics were calculated for each. See statistics variables]
+[_Note:As set of statistics were calculated for each. See statistics variables _]
 
-Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
+>Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
 
 
-Note 2
+##Note 2
 Old and New Feature Name Map
 
 This presents a map of the feature names in the original data set to the feature names in this data set.
@@ -127,33 +125,33 @@ Note that not all possible combinations of attributes are present in the data se
 
 Original feature name                		New feature name
 featurename        				feature
-tBodyAcc-mean()-X					timeAccelerometerBodyMeanNojerkNomagNofreqX
-tBodyAcc-mean()-Y					timeAccelerometerBodyMeanNojerkNomagNofreqY
-tBodyAcc-mean()-Z					timeAccelerometerBodyMeanNojerkNomagNofreqZ
-tBodyAcc-std()-X					timeAccelerometerBodyStdNojerkNomagNofreqX
-tBodyAcc-std()-Y					timeAccelerometerBodyStdNojerkNomagNofreqY
-tBodyAcc-std()-Z					timeAccelerometerBodyStdNojerkNomagNofreqZ
-tBodyAcc-mad()-X					timeAccelerometerBodyMadNojerkNomagNofreqX
-tBodyAcc-mad()-Y					timeAccelerometerBodyMadNojerkNomagNofreqY
-tBodyAcc-mad()-Z					timeAccelerometerBodyMadNojerkNomagNofreqZ
-tBodyAcc-max()-X					timeAccelerometerBodyMaxNojerkNomagNofreqX
-tBodyAcc-max()-Y					timeAccelerometerBodyMaxNojerkNomagNofreqY
-tBodyAcc-max()-Z					timeAccelerometerBodyMaxNojerkNomagNofreqZ
-tBodyAcc-min()-X					timeAccelerometerBodyMinNojerkNomagNofreqX
-tBodyAcc-min()-Y					timeAccelerometerBodyMinNojerkNomagNofreqY
-tBodyAcc-min()-Z					timeAccelerometerBodyMinNojerkNomagNofreqZ
-tBodyAcc-sma()					timeAccelerometerBodySmaNojerkNomagNofreqNA
-tBodyAcc-energy()-X					timeAccelerometerBodyEnergyNojerkNomagNofreqX
-tBodyAcc-energy()-Y					timeAccelerometerBodyEnergyNojerkNomagNofreqY
-tBodyAcc-energy()-Z					timeAccelerometerBodyEnergyNojerkNomagNofreqZ
-tBodyAcc-iqr()-X					timeAccelerometerBodyIqrNojerkNomagNofreqX
-tBodyAcc-iqr()-Y					timeAccelerometerBodyIqrNojerkNomagNofreqY
-tBodyAcc-iqr()-Z					timeAccelerometerBodyIqrNojerkNomagNofreqZ
-tBodyAcc-entropy()-X					timeAccelerometerBodyEntropyNojerkNomagNofreqX
-tBodyAcc-entropy()-Y					timeAccelerometerBodyEntropyNojerkNomagNofreqY
-tBodyAcc-entropy()-Z					timeAccelerometerBodyEntropyNojerkNomagNofreqZ
-tBodyAcc-arCoeff()-X,1					timeAccelerometerBodyarCoeffNojerkNomagNofreqNA
-tBodyAcc-arCoeff()-X,2					timeAccelerometerBodyarCoeffNojerkNomagNofreqNA
+tBodyAcc-mean()-X				timeAccelerometerBodyMeanNojerkNomagNofreqX
+tBodyAcc-mean()-Y				timeAccelerometerBodyMeanNojerkNomagNofreqY
+tBodyAcc-mean()-Z				timeAccelerometerBodyMeanNojerkNomagNofreqZ
+tBodyAcc-std()-X				timeAccelerometerBodyStdNojerkNomagNofreqX
+tBodyAcc-std()-Y				timeAccelerometerBodyStdNojerkNomagNofreqY
+tBodyAcc-std()-Z				timeAccelerometerBodyStdNojerkNomagNofreqZ
+tBodyAcc-mad()-X				timeAccelerometerBodyMadNojerkNomagNofreqX
+tBodyAcc-mad()-Y				timeAccelerometerBodyMadNojerkNomagNofreqY
+tBodyAcc-mad()-Z				timeAccelerometerBodyMadNojerkNomagNofreqZ
+tBodyAcc-max()-X				timeAccelerometerBodyMaxNojerkNomagNofreqX
+tBodyAcc-max()-Y				timeAccelerometerBodyMaxNojerkNomagNofreqY
+tBodyAcc-max()-Z				timeAccelerometerBodyMaxNojerkNomagNofreqZ
+tBodyAcc-min()-X				timeAccelerometerBodyMinNojerkNomagNofreqX
+tBodyAcc-min()-Y				timeAccelerometerBodyMinNojerkNomagNofreqY
+tBodyAcc-min()-Z				timeAccelerometerBodyMinNojerkNomagNofreqZ
+tBodyAcc-sma()		                		timeAccelerometerBodySmaNojerkNomagNofreqNA
+tBodyAcc-energy()-X				timeAccelerometerBodyEnergyNojerkNomagNofreqX
+tBodyAcc-energy()-Y				timeAccelerometerBodyEnergyNojerkNomagNofreqY
+tBodyAcc-energy()-Z				timeAccelerometerBodyEnergyNojerkNomagNofreqZ
+tBodyAcc-iqr()-X				timeAccelerometerBodyIqrNojerkNomagNofreqX
+tBodyAcc-iqr()-Y				timeAccelerometerBodyIqrNojerkNomagNofreqY
+tBodyAcc-iqr()-Z				timeAccelerometerBodyIqrNojerkNomagNofreqZ
+tBodyAcc-entropy()-X				timeAccelerometerBodyEntropyNojerkNomagNofreqX
+tBodyAcc-entropy()-Y				timeAccelerometerBodyEntropyNojerkNomagNofreqY
+tBodyAcc-entropy()-Z				timeAccelerometerBodyEntropyNojerkNomagNofreqZ
+tBodyAcc-arCoeff()-X,1				timeAccelerometerBodyarCoeffNojerkNomagNofreqNA
+tBodyAcc-arCoeff()-X,2				timeAccelerometerBodyarCoeffNojerkNomagNofreqNA
 tBodyAcc-arCoeff()-X,3					timeAccelerometerBodyarCoeffNojerkNomagNofreqNA
 tBodyAcc-arCoeff()-X,4					timeAccelerometerBodyarCoeffNojerkNomagNofreqNA
 tBodyAcc-arCoeff()-Y,1					timeAccelerometerBodyarCoeffNojerkNomagNofreqNA
