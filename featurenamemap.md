@@ -3,7 +3,7 @@ This presents a map of the feature names in the original data set to the feature
 
 Note that not all possible combinations of attributes are present in the data set.
 
-| Original feature name          |                New feature name                         |
+| Original feature name          |            	New feature name                         |
 |:-------------------------------|:------------------------------------------------------|
 featurename  |  feature
 tBodyAcc-mean()-X  |  timeAccelerometerBodyMeanNojerkNomagNofreqX

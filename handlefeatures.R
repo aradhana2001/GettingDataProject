@@ -7,19 +7,26 @@ createFeatures<-function()
                              row.names=1, col.names=c("featureid","featurename"), header=FALSE)      
 
                 ## First part of cleaning up the variable names
-                ## featirecolnames represents all of the columns in the original data set.
+                ## featurecolnames represents all of the columns in the original data set.
                 ## Fix Up some anamolies
                 arCoeffFix<-grep("[arCoeff()][^-][0-9]$", features$featurename)
                
-                
+                features[arCoeffFix,]<-sub("arCoeff()", "arCoeff()-", features[arCoeffFix,], fixed=TRUE)
                 
                 featurecolnames<-tolower(as.array(features$featurename))
+
+                featurecolnames<-sub("()-", "Dim", featurecolnames, fixed=TRUE)
+
+                ## Deal with special cases so they don't end up with identical names
+                featurecolnames<-ifelse (substr(featurecolnames, 1, 7) == "angle(x", paste0(featurecolnames,"DimX"), featurecolnames)
+                featurecolnames<-ifelse (substr(featurecolnames, 1, 7) == "angle(y", paste0(featurecolnames,"DimY"), featurecolnames)
+                featurecolnames<-ifelse (substr(featurecolnames, 1, 7) == "angle(z", paste0(featurecolnames,"DimZ"), featurecolnames)
                 
+                ## Clean up special characters
                 featurecolnames<-gsub("(","",featurecolnames, fixed=TRUE)
                 featurecolnames<-gsub(")","",featurecolnames, fixed=TRUE)
                 featurecolnames<-gsub(",","",featurecolnames, fixed=TRUE)
                 featurecolnames<-gsub("-","",featurecolnames, fixed=TRUE)
-                
                 
                 return (featurecolnames)
 }
