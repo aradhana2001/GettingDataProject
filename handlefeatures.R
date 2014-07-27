@@ -83,11 +83,7 @@ parseFeatureNames<-function(featurecolnames)
                 domain[domain=="a"]<-"angle"
 
                 dimension<-sub("^\\w+Dim", "", featurecolnames, ignore.case = FALSE, perl=TRUE)
-                featurecolnames<-ifelse(featurecolnames == dimension, featurecolnames, paste0(featurecolnames,dimension))               
-                
-                dimension<-sub("^\\w+[Dim]", "", featurecolnames)                
-                dimension<-substr(featurecolnames, nchar, nchar)
-                dimension[dimension != "x" & dimension != "y" & dimension != "z"] <- NA
+                dimension<-ifelse(featurecolnames == dimension, "", paste0(featurecolnames,dimension))               
                 
                 ## This will only work for binary variables
                 ## It searches for matches for str1 and if true it returns str3, otherwise str4
