@@ -94,9 +94,8 @@ _If you choose the LongNarrowPlus data you will also get these columns, which ar
 This explains the meaning of the different segments within the feature names.
 
 The feature names are concatendated strings representing the values of that feature of the following variables in the order listed:
-Domain, Accelerationsignal, Source, Statistic, Jerk, magnitude, frequency, dimesnion.
-
-Note that not all names are unique. For the current project this was not an isue because all names representing means and standard deviations are unique/
+Domain, Accelerationsignal, Source, Statistic, Jerk, magnitude, frequency, dimension.
+Dimension strings are prefixed with Dim.
 
 Quoted from the original study code book feature_info.txt file from the original dataset.
 
@@ -116,7 +115,7 @@ remove noise.
 >These signals were used to estimate variables of the feature vector for each pattern:  
 >'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-_Note:A set of statistics were calculated for each. See statistic variables_
+_snip. Note:A set of statistics were calculated for each. See statistic variables_
 
 >Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
 
