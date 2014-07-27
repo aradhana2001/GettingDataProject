@@ -122,5 +122,5 @@ _Note:A set of statistics were calculated for each. See statistic variables_
 
 
 ##Note 2
-[Old and New Feature Name Map](https://github.com/elinw/GettingDataProject/featurenamemap)
-[here](https://github.com/elinw/joomla-cms/wiki/Home--Tags!)
+[Old and New Feature Name Map](https://github.com/elinw/GettingDataProject/blob/master/featurenamemap.md)
+
